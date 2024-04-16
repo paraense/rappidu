@@ -1,5 +1,5 @@
 # RappiDu
-Rápido é um sistema de autoatendimento para lanchonetes e restaurantes. Este respositório contém uma API com os serviço necessários para realizar um pedido e efetuar o pagamento.
+Rappidu é um sistema de autoatendimento para lanchonetes e restaurantes. Este respositório contém uma API com os serviço necessários para realizar um pedido e efetuar o pagamento.
 
 ## Pré requisitos
  - Docker
