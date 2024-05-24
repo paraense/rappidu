@@ -1,4 +1,4 @@
-package br.com.rappidu.dto.responses;
+package br.com.rappidu.application.dto.responses;
 
 import lombok.Data;
 
