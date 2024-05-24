@@ -7,6 +7,9 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>web</artifactId>
+  <build>
+    <finalName>rappidu</finalName>
+  </build>
   <dependencies>
     <dependency>
       <groupId>br.com.rappidu</groupId>

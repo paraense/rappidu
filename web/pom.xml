@@ -10,6 +10,9 @@
     </parent>
 
     <artifactId>web</artifactId>
+    <build>
+        <finalName>rappidu</finalName>
+    </build>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
