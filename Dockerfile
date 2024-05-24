@@ -6,6 +6,6 @@ COPY . project/
 
 RUN mvn -f project/pom.xml clean package
 
-ENTRYPOINT ["java", "-jar", "project/web/target/web-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "project/web/target/rappidu.jar"]
 
 EXPOSE 8080/tcp
