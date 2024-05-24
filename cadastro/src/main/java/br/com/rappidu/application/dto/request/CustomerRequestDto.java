@@ -1,4 +1,4 @@
-package br.com.rappidu.application.dto.response;
+package br.com.rappidu.application.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,12 +9,12 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ClienteResponse {
+public class CustomerRequestDto {
     private Long id;
 
     private String name;
 
     private String cpf;
 
-    private List<EnderecoResponse> enderecos = new ArrayList<>();
+    private List<AddressRequestDto> enderecos = new ArrayList<>();
 }

@@ -9,14 +9,14 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Cliente {
+public class Customer {
     private Long id;
 
     private String name;
 
     private Cpf cpf;
 
-    private List<Endereco> enderecos = new ArrayList<>();
+    private List<Address> addresses = new ArrayList<>();
 
     public void setCpf(String documentNumber) {
         this.cpf = new Cpf(documentNumber);

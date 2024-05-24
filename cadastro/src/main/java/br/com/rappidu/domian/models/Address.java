@@ -1,11 +1,12 @@
-package br.com.rappidu.application.dto.response;
+package br.com.rappidu.domian.models;
+
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class EnderecoResponse {
+public class Address {
 
     private String logradouro;
 
