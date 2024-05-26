@@ -24,15 +24,15 @@ public class CustomerController {
 
     @GetMapping("/{cpf}")
     public ResponseEntity<CustomerResponseDto> findByCpf(@PathVariable("cpf") Cpf cpf) throws ChangeSetPersister.NotFoundException {
-        Customer customer = service.findByCpf(cpf);
-        CustomerResponseDto response = mapper.toResponseDTO(customer);
+        var customer = service.findByCpf(cpf);
+        var response = mapper.toResponseDTO(customer);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping
     public ResponseEntity<URI> create(@RequestBody CustomerRequestDto customerRequestDto) {
-        Customer customer = mapper.toModel(customerRequestDto);
-        Long id = service.criar(customer);
+        var customer = mapper.toModel(customerRequestDto);
+        var id = service.create(customer);
         return ResponseEntity.created(URI.create("/customer/" + id)).build();
     }
 }

@@ -10,11 +10,12 @@ import java.util.List;
 @Getter
 @Setter
 public class CustomerResponseDto {
+
     private Long id;
 
     private String name;
 
     private String cpf;
 
-    private List<AddressResponseDto> enderecos = new ArrayList<>();
+    private List<AddressResponseDto> addresses = new ArrayList<>();
 }

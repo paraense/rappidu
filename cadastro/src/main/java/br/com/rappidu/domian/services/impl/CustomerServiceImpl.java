@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Long criar(Customer customer) {
+    public Long create(Customer customer) {
         var response = repository.save(customer);
         return response.getId();
     }
