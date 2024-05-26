@@ -1,6 +1,5 @@
 package br.com.rappidu.application.adapters;
 
-
 import br.com.rappidu.application.dto.request.CustomerRequestDto;
 import br.com.rappidu.application.dto.response.CustomerResponseDto;
 import br.com.rappidu.domian.mappers.CustomerMapper;
@@ -10,7 +9,6 @@ import br.com.rappidu.domian.services.CustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Component;
 
 
@@ -30,12 +28,8 @@ public class CustomerAdapter {
     private final CustomerMapper mapper;
 
     public CustomerResponseDto findByCpf(String cpf) {
-        try {
-            Customer customer = service.findByCpf(new Cpf(cpf));
-            return mapper.toResponseDTO(customer);
-        }catch (ChangeSetPersister.NotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        Customer customer = service.findByCpf(new Cpf(cpf));
+        return mapper.toResponseDTO(customer);
     }
 
     public CustomerResponseDto create(CustomerRequestDto customerRequestDto) {
