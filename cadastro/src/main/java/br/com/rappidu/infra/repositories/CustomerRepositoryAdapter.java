@@ -1,5 +1,6 @@
 package br.com.rappidu.infra.repositories;
 
+import br.com.rappidu.domian.exceptions.CustomerNotFoundException;
 import br.com.rappidu.domian.mappers.CustomerMapper;
 import br.com.rappidu.domian.models.Customer;
 import br.com.rappidu.domian.repositories.CustomerRepositoryPortOut;
@@ -19,14 +20,14 @@ public class CustomerRepositoryAdapter implements CustomerRepositoryPortOut {
     public Customer findByCpf(String cpf) {
         return repo.findByCpf(cpf)
                 .map(mapper::toModel)
-                .orElseThrow();
+                .orElseThrow(() -> new CustomerNotFoundException("Customer Not Found"));
     }
 
     @Override
     public Customer save(Customer customer) {
         CustomerEntity entity = mapper.toEntity(customer);
-        CustomerEntity reponse = repo.save(entity);
+        CustomerEntity response = repo.save(entity);
 
-        return mapper.toModel(reponse);
+        return mapper.toModel(response);
     }
 }

@@ -5,7 +5,6 @@ import br.com.rappidu.domian.models.Cpf;
 import org.springframework.data.crossstore.ChangeSetPersister;
 
 public interface CustomerService {
-    Customer findByCpf(Cpf cpf) throws ChangeSetPersister.NotFoundException;
-
-    Long criar(Customer customer);
+    Customer findByCpf(Cpf cpf);
+    Customer create(Customer customer);
 }
