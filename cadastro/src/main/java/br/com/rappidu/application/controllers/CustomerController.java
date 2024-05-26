@@ -1,12 +1,13 @@
-package br.com.rappidu.application;
+package br.com.rappidu.application.controllers;
 
 import br.com.rappidu.application.dto.request.CustomerRequestDto;
 import br.com.rappidu.application.dto.response.CustomerResponseDto;
 import br.com.rappidu.domian.mappers.CustomerMapper;
-import br.com.rappidu.domian.models.Customer;
 import br.com.rappidu.domian.models.Cpf;
 import br.com.rappidu.domian.services.CustomerService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,13 @@ import java.net.URI;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/customer")
+@ComponentScan(
+        basePackages = "br.com.rappidu.domain.services",
+        includeFilters = @ComponentScan.Filter(
+                type = FilterType.ASSIGNABLE_TYPE,
+                classes = CustomerService.class
+        )
+)
 public class CustomerController {
 
     private final CustomerService service;
