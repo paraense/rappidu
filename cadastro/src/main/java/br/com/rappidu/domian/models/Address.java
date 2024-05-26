@@ -8,13 +8,13 @@ import lombok.Setter;
 @Setter
 public class Address {
 
-    private String logradouro;
+    private String street;
 
-    private String bairro;
+    private String neighborhood;
 
-    private String cidade;
+    private String city;
 
-    private String estado;
+    private String state;
 
-    private String cep;
+    private String zipcode;
 }
