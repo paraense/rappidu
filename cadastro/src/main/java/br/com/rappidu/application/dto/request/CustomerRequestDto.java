@@ -16,5 +16,5 @@ public class CustomerRequestDto {
 
     private String cpf;
 
-    private List<AddressRequestDto> enderecos = new ArrayList<>();
+    private List<AddressRequestDto> addresses = new ArrayList<>();
 }
