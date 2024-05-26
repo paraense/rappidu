@@ -22,8 +22,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Long create(Customer customer) {
+    public Customer create(Customer customer) {
         var response = repository.save(customer);
-        return response.getId();
+        return response;
     }
 }
