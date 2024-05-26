@@ -1,46 +1,36 @@
 package br.com.rappidu.application.controllers;
 
+import br.com.rappidu.application.adapters.CustomerAdapter;
 import br.com.rappidu.application.dto.request.CustomerRequestDto;
 import br.com.rappidu.application.dto.response.CustomerResponseDto;
-import br.com.rappidu.domian.mappers.CustomerMapper;
-import br.com.rappidu.domian.models.Cpf;
-import br.com.rappidu.domian.services.CustomerService;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.FilterType;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/customer")
-@ComponentScan(
-        basePackages = "br.com.rappidu.domain.services",
-        includeFilters = @ComponentScan.Filter(
-                type = FilterType.ASSIGNABLE_TYPE,
-                classes = CustomerService.class
-        )
-)
+@AllArgsConstructor
 public class CustomerController {
 
-    private final CustomerService service;
-    private final CustomerMapper mapper;
+    private final CustomerAdapter adapter;
 
     @GetMapping("/{cpf}")
-    public ResponseEntity<CustomerResponseDto> findByCpf(@PathVariable("cpf") Cpf cpf) throws ChangeSetPersister.NotFoundException {
-        var customer = service.findByCpf(cpf);
-        var response = mapper.toResponseDTO(customer);
+    public ResponseEntity<CustomerResponseDto> findByCpf(@PathVariable("cpf") String cpf)  {
+        CustomerResponseDto response = adapter.findByCpf(cpf);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping
-    public ResponseEntity<URI> create(@RequestBody CustomerRequestDto customerRequestDto) {
-        var customer = mapper.toModel(customerRequestDto);
-        var id = service.create(customer);
-        return ResponseEntity.created(URI.create("/customer/" + id)).build();
+    public ResponseEntity<CustomerResponseDto> create(@RequestBody CustomerRequestDto customerRequestDto) {
+       CustomerResponseDto responseDto = adapter.create(customerRequestDto);
+
+       responseDto.add(linkTo(methodOn(CustomerController.class)
+                .findByCpf(responseDto.getCpf()))
+                .withSelfRel());
+
+        return ResponseEntity.ok(responseDto);
     }
 }

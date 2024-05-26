@@ -7,5 +7,5 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 public interface CustomerService {
     Customer findByCpf(Cpf cpf) throws ChangeSetPersister.NotFoundException;
 
-    Long create(Customer customer);
+    Customer create(Customer customer);
 }
