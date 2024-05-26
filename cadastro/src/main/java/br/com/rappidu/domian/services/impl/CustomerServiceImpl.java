@@ -18,12 +18,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer findByCpf(Cpf cpf)  {
          return repository.findByCpf(cpf.get());
-         //TODO Criar execção apropriada
     }
 
     @Override
     public Customer create(Customer customer) {
-        var response = repository.save(customer);
-        return response;
+        return repository.save(customer);
     }
 }
