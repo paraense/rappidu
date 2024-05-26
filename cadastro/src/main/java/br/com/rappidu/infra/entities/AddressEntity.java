@@ -28,7 +28,7 @@ public class AddressEntity {
     @Column(name = "STATE", length = 20)
     private String state;
 
-    @Column(name = "ZIPCODE", length = 7)
+    @Column(name = "ZIPCODE", length = 8)
     private String zipcode;
 
     @ManyToOne
