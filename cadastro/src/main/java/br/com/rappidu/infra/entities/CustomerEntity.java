@@ -26,6 +26,6 @@ public class CustomerEntity {
     private String cpf;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CUSTOMER_ID")
+    @JoinColumn(name = "CUSTOMER_COD")
     private List<AddressEntity> addresses = new ArrayList<>();
 }
