@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rappidu
+    url: jdbc:mysql://database:3306/rappidu
     username: root
     password: root
   jpa:
