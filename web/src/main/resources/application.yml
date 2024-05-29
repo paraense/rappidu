@@ -2,7 +2,7 @@ server:
   servlet:
     context-path: /rappidu
 
-#spring:
+spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://database:3306/rappidu
@@ -10,4 +10,6 @@ server:
     password: root
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

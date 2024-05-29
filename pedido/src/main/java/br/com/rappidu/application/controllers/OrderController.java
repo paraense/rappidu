@@ -15,7 +15,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/orders")
 @AllArgsConstructor
 public class OrderController {
 

@@ -25,4 +25,7 @@ public interface OrderMapper {
     @Mapping(target = "code", source = "id")
     Order toModel(OrderEntity entity);
 
+    @Mapping(target = "code", source = "id")
+    List<Order> toModel(List<OrderEntity> entity);
+
 }

@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/pagamento")
+//@RestController
+//@RequestMapping("/pagamento")
 public class PagamentoController {
 
-    @GetMapping("/qrcode/{codPedido}")
+   // @GetMapping("/qrcode/{codPedido}")
     public ResponseEntity<?> obterQrCodeDePagamento(@PathVariable Long codPedido) {
         // Devolve QRCode de pagamento
         return ResponseEntity.ok().build();

@@ -10,7 +10,7 @@ services:
       MYSQL_DATABASE: rappidu
       MYSQL_PASSWORD: root
     volumes:
-      - ./:/docker-entrypoint-initdb.d
+      - ./initial-database.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - "3306:3306"
     expose:
@@ -23,6 +23,6 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - database
+     - database
     links:
       - database
