@@ -14,6 +14,7 @@ public class AddressEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "STREET", length = 100)
@@ -28,7 +29,7 @@ public class AddressEntity {
     @Column(name = "STATE", length = 20)
     private String state;
 
-    @Column(name = "ZIPCODE", length = 7)
+    @Column(name = "ZIPCODE", length = 8)
     private String zipcode;
 
     @ManyToOne

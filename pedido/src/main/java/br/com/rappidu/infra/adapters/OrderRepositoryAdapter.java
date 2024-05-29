@@ -12,6 +12,8 @@ import br.com.rappidu.infra.repositories.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @AllArgsConstructor
 public class OrderRepositoryAdapter implements OrderRepositoryPortOut {
@@ -40,6 +42,11 @@ public class OrderRepositoryAdapter implements OrderRepositoryPortOut {
         return repo.findById(id)
                 .map(mapper::toModel)
                 .orElseThrow(() -> new OrderNotFountException("Order Not Found"));
+    }
+
+    @Override
+    public List<Order> findAll() {
+       return mapper.toModel(repo.findAll());
     }
 
 }

@@ -12,21 +12,30 @@
   <packaging>pom</packaging>
   <name>monolito</name>
   <version>0.0.1-SNAPSHOT</version>
-  <description>Demo project for Spring Boot</description>
+  <description>Projeto de estudos para a Postech FIAP</description>
   <build>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <mainClass>br.com.rappidu.Main</mainClass>
-          <excludes>
-            <exclude>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-            </exclude>
-          </excludes>
-        </configuration>
+        <executions>
+          <execution>
+            <id>repackage</id>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <mainClass>br.com.rappidu.Main</mainClass>
+              <excludes>
+                <exclude>
+                  <groupId>org.projectlombok</groupId>
+                  <artifactId>lombok</artifactId>
+                </exclude>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
@@ -44,7 +53,6 @@
   </build>
   <modules>
     <module>cadastro</module>
-    <module>pagamento</module>
     <module>pedido</module>
     <module>produto</module>
     <module>web</module>
@@ -70,15 +78,15 @@
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-hateoas</artifactId>
-      <version>3.2.4</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>2.2.224</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-hateoas</artifactId>
+      <version>3.2.4</version>
       <scope>provided</scope>
     </dependency>
     <dependency>

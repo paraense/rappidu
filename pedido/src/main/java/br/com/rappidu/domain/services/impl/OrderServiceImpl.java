@@ -21,13 +21,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void updateStatus(Long id, StatusOrder status) {
-
-    }
-
-    @Override
     public List<Order> listAll() {
-        return List.of();
+        return repo.findAll();
     }
 
     @Override

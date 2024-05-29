@@ -5,6 +5,7 @@ import br.com.rappidu.application.dto.responses.ProductResponse;
 import br.com.rappidu.domain.models.Product;
 import br.com.rappidu.infra.entities.ProductEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
@@ -15,6 +16,7 @@ public interface ProductMapper {
 
     Product toModel(ProductRequest product);
 
+    @Mapping(source = "id", target = "code")
     Product toModel(ProductEntity product);
 
     ProductResponse toResponse(Product product);
