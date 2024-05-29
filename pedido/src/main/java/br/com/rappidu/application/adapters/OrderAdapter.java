@@ -11,6 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @ComponentScan(
         basePackages = "br.com.rappidu.domain.services",
@@ -40,5 +42,10 @@ public class OrderAdapter {
     public OrderResponseDto findByCode(Long code) {
         Order order = service.findByCode(code);
         return mapper.toResponseDto(order);
+    }
+
+    public List<OrderResponseDto> findAll() {
+        List<Order> orders = service.listAll();
+        return mapper.toResponseDto(orders);
     }
 }

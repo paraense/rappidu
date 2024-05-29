@@ -13,10 +13,9 @@
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>monolito</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Projeto de estudos para a Postech FIAP</description>
     <modules>
 		<module>cadastro</module>
-        <module>pagamento</module>
 		<module>pedido</module>
 		<module>produto</module>
 		<module>web</module>
@@ -40,16 +39,16 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.4.0</version>
-		</dependency>
-		<!--<dependency>
+		</dependency> -->
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>

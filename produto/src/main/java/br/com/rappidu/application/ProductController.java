@@ -29,7 +29,6 @@ import java.util.stream.Collectors;
 public class ProductController {
 
     private final ProductMapper mapper;
-
     private final ProductService service;
 
 
@@ -40,35 +39,11 @@ public class ProductController {
 
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Product>> all() {
-        var x = service.all();
-        return ResponseEntity.ok(x);
-
-    }
-
     @PostMapping
     public ResponseEntity<String> register(@RequestBody ProductRequest productRequest){
         Product product = mapper.toModel(productRequest);
         service.create(product);
         return new ResponseEntity<>("Product Created", HttpStatus.CREATED);
     }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> remove (@PathVariable Long id){
-        service.remove(id);
-        return new ResponseEntity<>("product removed", HttpStatus.OK);
-    }
-
-    @PatchMapping("/{id}")
-    public ResponseEntity<String> update(@PathVariable Long id,
-                                         @RequestBody ProductRequest productRequest){
-
-        Product product = mapper.toModel(productRequest);
-        service.update(id,product);
-        return new ResponseEntity<>("product updated", HttpStatus.OK);
-
-    }
-
 
 }

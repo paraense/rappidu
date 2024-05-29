@@ -11,12 +11,12 @@ import java.util.List;
 @Setter
 @Getter
 @Entity
-@Table(name = "customers")
+@Table(name = "CUSTOMERS")
 public class CustomerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "COD")
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "NAME", length = 50)
@@ -26,6 +26,6 @@ public class CustomerEntity {
     private String cpf;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CUSTOMER_COD")
+    @JoinColumn(name = "CUSTOMER_ID")
     private List<AddressEntity> addresses = new ArrayList<>();
 }

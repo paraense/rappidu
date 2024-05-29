@@ -4,9 +4,10 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-@Data
-public class ProductResponse {
-    private final String name;
-    private final BigDecimal price;
-    private final ProductType type;
+
+public record ProductResponse(Long code,
+                              String name,
+                              BigDecimal price,
+                              ProductType type) {
+
 }

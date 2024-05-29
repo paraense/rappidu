@@ -18,6 +18,7 @@ public class OrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "CUSTOMER_NAME")
@@ -30,7 +31,7 @@ public class OrderEntity {
     private StatusOrder status;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ODER_ID")
+    @JoinColumn(name = "ORDER_ID")
     private List<ItemEntity> items = new ArrayList<>();
 
 }

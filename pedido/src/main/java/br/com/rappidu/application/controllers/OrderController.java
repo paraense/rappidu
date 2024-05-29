@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 
@@ -18,6 +20,12 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 public class OrderController {
 
     private final OrderAdapter adapter;
+
+    // TODO Aplicar paginação
+    @GetMapping
+    public ResponseEntity<List<OrderResponseDto>> findAll() {
+        return ResponseEntity.ok(adapter.findAll());
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

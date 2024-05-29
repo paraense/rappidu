@@ -36,11 +36,6 @@
             <artifactId>produto</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>br.com.rappidu</groupId>
-            <artifactId>pagamento</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
 </project>
