@@ -1,6 +1,6 @@
 package br.com.rappidu.application.exceptions;
 
-import br.com.rappidu.domian.exceptions.CustomerNotFoundException;
+import br.com.rappidu.domain.exceptions.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

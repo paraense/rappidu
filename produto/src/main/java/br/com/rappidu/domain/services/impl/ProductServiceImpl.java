@@ -1,7 +1,7 @@
 package br.com.rappidu.domain.services.impl;
 
-import br.com.rappidu.application.dto.responses.ProductType;
 import br.com.rappidu.domain.models.Product;
+import br.com.rappidu.domain.models.ProductType;
 import br.com.rappidu.domain.repositories.ProductRepositoryPortOut;
 import br.com.rappidu.domain.services.ProductService;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import java.util.List;
 
 @AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
+
     private final ProductRepositoryPortOut repository;
 
     @Override
@@ -17,8 +18,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findByType(ProductType productType) {
-        return repository.findByType(productType);
+    public List<Product> findByType(ProductType productTypeResponse) {
+        return repository.findByType(productTypeResponse);
     }
 
     @Override

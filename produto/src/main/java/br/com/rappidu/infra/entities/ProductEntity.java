@@ -1,6 +1,5 @@
 package br.com.rappidu.infra.entities;
 
-import br.com.rappidu.application.dto.responses.ProductType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +24,6 @@ public class ProductEntity {
     private BigDecimal price;
 
     @Column(name = "TYPE")
-    @Enumerated(EnumType.ORDINAL)
-    private ProductType type;
+    private Integer type;
+
 }

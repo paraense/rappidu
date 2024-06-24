@@ -1,10 +1,11 @@
 package br.com.rappidu.infra.repositories;
 
-import br.com.rappidu.domian.exceptions.CustomerNotFoundException;
-import br.com.rappidu.domian.mappers.CustomerMapper;
-import br.com.rappidu.domian.models.Customer;
-import br.com.rappidu.domian.repositories.CustomerRepositoryPortOut;
+import br.com.rappidu.domain.exceptions.CustomerNotFoundException;
+
+import br.com.rappidu.domain.models.Customer;
+import br.com.rappidu.domain.repositories.CustomerRepositoryPortOut;
 import br.com.rappidu.infra.entities.CustomerEntity;
+import br.com.rappidu.infra.mappers.CustomerEntityMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class CustomerRepositoryAdapter implements CustomerRepositoryPortOut {
 
     private final CustromerRepository repo;
-    private final CustomerMapper mapper;
+    private final CustomerEntityMapper mapper;
 
     @Override
     public Customer findByCpf(String cpf) {

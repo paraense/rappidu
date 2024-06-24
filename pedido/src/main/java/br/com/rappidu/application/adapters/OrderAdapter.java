@@ -2,7 +2,7 @@ package br.com.rappidu.application.adapters;
 
 import br.com.rappidu.application.dto.request.OrderRequestDto;
 import br.com.rappidu.application.dto.response.OrderResponseDto;
-import br.com.rappidu.domain.mappers.OrderMapper;
+import br.com.rappidu.application.dto.mappers.OrderMapper;
 import br.com.rappidu.domain.models.Order;
 import br.com.rappidu.domain.models.OrderRequest;
 import br.com.rappidu.domain.services.OrderService;

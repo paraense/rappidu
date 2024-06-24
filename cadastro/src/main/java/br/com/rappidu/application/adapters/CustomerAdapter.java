@@ -2,10 +2,10 @@ package br.com.rappidu.application.adapters;
 
 import br.com.rappidu.application.dto.request.CustomerRequestDto;
 import br.com.rappidu.application.dto.response.CustomerResponseDto;
-import br.com.rappidu.domian.mappers.CustomerMapper;
-import br.com.rappidu.domian.models.Cpf;
-import br.com.rappidu.domian.models.Customer;
-import br.com.rappidu.domian.services.CustomerService;
+import br.com.rappidu.application.mappers.CustomerModelMapper;
+import br.com.rappidu.domain.models.Cpf;
+import br.com.rappidu.domain.models.Customer;
+import br.com.rappidu.domain.services.CustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 public class CustomerAdapter {
 
     private final CustomerService service;
-    private final CustomerMapper mapper;
+    private final CustomerModelMapper mapper;
 
     public CustomerResponseDto findByCpf(String cpf) {
         Customer customer = service.findByCpf(new Cpf(cpf));

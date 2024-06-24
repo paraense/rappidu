@@ -2,11 +2,14 @@ package br.com.rappidu.infra.adapters;
 
 import br.com.rappidu.domain.exceptions.InvalidProductException;
 import br.com.rappidu.domain.exceptions.OrderNotFountException;
-import br.com.rappidu.domain.mappers.OrderMapper;
+
 import br.com.rappidu.domain.repositories.OrderRepositoryPortOut;
-import br.com.rappidu.domain.mappers.ProductMapper;
+
 import br.com.rappidu.domain.models.Order;
 import br.com.rappidu.domain.models.Product;
+
+import br.com.rappidu.infra.entities.mappers.OrderEntityMapper;
+import br.com.rappidu.infra.entities.mappers.ProductEntityMapper;
 import br.com.rappidu.infra.repositories.OrderRepository;
 import br.com.rappidu.infra.repositories.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -19,9 +22,9 @@ import java.util.List;
 public class OrderRepositoryAdapter implements OrderRepositoryPortOut {
 
     private final ProductRepository productRepository;
-    private final ProductMapper productMapper;
+    private final ProductEntityMapper productMapper;
     private final OrderRepository repo;
-    private final OrderMapper mapper;
+    private final OrderEntityMapper mapper;
 
     @Override
     public Order save(Order order) {
