@@ -43,12 +43,12 @@ CREATE TABLE IF NOT EXISTS ADDRESSES (
 );
 
 INSERT INTO PRODUCTS (name,price,type)
-VALUES  ('Hamburguer Vegetariano', 45.90,0),
-        ('Milkshake', 25.90,3),
-        ('Pudim', 15.90,3),
-        ('X-Burguer', 45.90,0),
-        ('Coca-cola', 25.90,2),
-        ('Sorvete', 15.90,3),
-        ('Pizza Grande', 45.90,0),
-        ('Batata Frita', 25.90,1),
-        ('Agua sem gás', 15.90,2);
+VALUES  ('Hamburguer Vegetariano', 45.90,1),
+        ('Milkshake', 25.90,4),
+        ('Pudim', 15.90,4),
+        ('X-Burguer', 45.90,1),
+        ('Coca-cola', 25.90,3),
+        ('Sorvete', 15.90,4),
+        ('Pizza Grande', 45.90,1),
+        ('Batata Frita', 25.90,2),
+        ('Agua sem gás', 15.90,3);
